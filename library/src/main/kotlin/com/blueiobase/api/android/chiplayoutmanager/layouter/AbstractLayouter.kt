@@ -3,7 +3,7 @@ package com.blueiobase.api.android.chiplayoutmanager.layouter
 import android.graphics.Rect
 import android.view.View
 import androidx.annotation.CallSuper
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.main.contract.IBorder
 import com.blueiobase.api.android.chiplayoutmanager.annotation.SpanLayoutChildGravity
 import com.blueiobase.api.android.chiplayoutmanager.cache.contract.IViewCacheStorage
@@ -27,7 +27,7 @@ abstract class AbstractLayouter(builder: Builder): ILayouter, IBorder {
         abstract class Builder {
 
             var offsetRect: Rect? = null
-            var layoutManager: ChipLayoutManager? = null
+            var layoutManager: ChipsLayoutManager? = null
             var cacheStorage: IViewCacheStorage? = null
             var rowStrategy: IRowStrategy? = null
             var border: IBorder? = null
@@ -44,7 +44,7 @@ abstract class AbstractLayouter(builder: Builder): ILayouter, IBorder {
                 return this
             }
 
-            fun layoutManager(layoutManager: ChipLayoutManager): Builder {
+            fun layoutManager(layoutManager: ChipsLayoutManager): Builder {
                 this.layoutManager = layoutManager
                 return this
             }
@@ -157,7 +157,7 @@ abstract class AbstractLayouter(builder: Builder): ILayouter, IBorder {
     ///////////////////////////////////////////////////////////////////////////
     // input dependencies
     ///////////////////////////////////////////////////////////////////////////
-    var layoutManager: ChipLayoutManager
+    var layoutManager: ChipsLayoutManager
         private set
     var cacheStorage: IViewCacheStorage
         private set

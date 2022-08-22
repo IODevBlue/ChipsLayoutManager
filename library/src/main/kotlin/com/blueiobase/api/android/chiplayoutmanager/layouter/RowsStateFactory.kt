@@ -1,7 +1,7 @@
 package com.blueiobase.api.android.chiplayoutmanager.layouter
 
 import android.view.View
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.main.contract.IScrollingController
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.anchor.contract.IAnchorFactory
@@ -18,7 +18,7 @@ import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.IStateFact
 import com.blueiobase.api.android.chiplayoutmanager.placer.contract.IPlacerFactory
 import com.blueiobase.api.android.chiplayoutmanager.util.StateHelper
 
-class RowsStateFactory(private val layoutManager: ChipLayoutManager) : IStateFactory {
+class RowsStateFactory(private val layoutManager: ChipsLayoutManager) : IStateFactory {
 
     private fun createOrientationStateFactory(): IOrientationStateFactory {
         return if (layoutManager.isLayoutRTL()) RTLRowsOrientationStateFactory() else LTRRowsOrientationStateFactory()

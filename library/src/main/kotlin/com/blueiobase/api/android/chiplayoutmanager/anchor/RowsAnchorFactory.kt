@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.blueiobase.api.android.chiplayoutmanager.main.ChildViewsIterable
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.ICanvas
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 
 /**
  * This class is responsible for handling the [View] object anchored at the extreme left/start of the [layout manager][RecyclerView.LayoutManager]
- * when the layout orientation is [horizontal][ChipLayoutManager.HORIZONTAL].
+ * when the layout orientation is [horizontal][ChipsLayoutManager.HORIZONTAL].
  *
  * @author IO DevBlue
  * @since 1.0.0

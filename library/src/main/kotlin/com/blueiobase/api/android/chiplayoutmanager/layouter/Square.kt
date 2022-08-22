@@ -5,7 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.ICanvas
 import com.blueiobase.api.android.chiplayoutmanager.main.ChildViewsIterable
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 
 
 abstract class Square (private val layoutManager: RecyclerView.LayoutManager): ICanvas {
@@ -13,21 +13,21 @@ abstract class Square (private val layoutManager: RecyclerView.LayoutManager): I
     private val childViews = ChildViewsIterable(layoutManager)
 
     /**
-     * highest view in layout. Have always actual value, because it set in [ChipLayoutManager.onLayoutChildren]
+     * highest view in layout. Have always actual value, because it set in [ChipsLayoutManager.onLayoutChildren]
      */
     private var topView: View? = null
 
     /**
-     * lowest view in layout. Have always actual value, because it set in [ChipLayoutManager.onLayoutChildren]
+     * lowest view in layout. Have always actual value, because it set in [ChipsLayoutManager.onLayoutChildren]
      */
     private var bottomView: View? = null
 
     /**
-     * The view have placed in the closest to the left border. Have always actual value, because it set in [ChipLayoutManager.onLayoutChildren]
+     * The view have placed in the closest to the left border. Have always actual value, because it set in [ChipsLayoutManager.onLayoutChildren]
      */
     private var leftView: View? = null
 
-    /** The view have placed in the closest to the right border. Have always actual value, because it set in [ChipLayoutManager.onLayoutChildren]  */
+    /** The view have placed in the closest to the right border. Have always actual value, because it set in [ChipsLayoutManager.onLayoutChildren]  */
     private var rightView: View? = null
 
 

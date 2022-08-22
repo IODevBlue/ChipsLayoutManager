@@ -1,7 +1,7 @@
 package com.blueiobase.api.android.chiplayoutmanager.layouter
 
 import android.view.View
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.main.contract.IScrollingController
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.anchor.ColumnsAnchorFactory
@@ -21,7 +21,7 @@ import com.blueiobase.api.android.chiplayoutmanager.placer.contract.IPlacerFacto
 import com.blueiobase.api.android.chiplayoutmanager.util.StateHelper
 
 
-class ColumnsStateFactory(private val layoutManager: ChipLayoutManager) : IStateFactory {
+class ColumnsStateFactory(private val layoutManager: ChipsLayoutManager) : IStateFactory {
 
     private val rowStrategyFactory = ColumnStrategyFactory()
 

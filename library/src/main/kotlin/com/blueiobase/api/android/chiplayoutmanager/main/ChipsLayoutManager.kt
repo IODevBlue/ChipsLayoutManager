@@ -30,6 +30,7 @@ import com.blueiobase.api.android.chiplayoutmanager.breaker.EmptyRowBreaker
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.IRowBreaker
 import com.blueiobase.api.android.chiplayoutmanager.criteria.contract.ICriteriaFactory
 import com.blueiobase.api.android.chiplayoutmanager.criteria.InfiniteCriteriaFactory
+import com.blueiobase.api.android.chiplayoutmanager.extension.chipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.ICanvas
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.ILayouter
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.IMeasureSupporter
@@ -47,7 +48,7 @@ import com.blueiobase.api.android.chiplayoutmanager.util.testing.ISpy
 import java.util.*
 
 
-class ChipLayoutManager(context: Context)
+class ChipsLayoutManager(val context: Context)
     : RecyclerView.LayoutManager(), IChipsLayoutManagerContract, IStateHolder,
     ScrollingController.IScrollerListener {
 
@@ -91,7 +92,7 @@ class ChipLayoutManager(context: Context)
         ///////////////////////////////////////////////////////////////////////////
         // inner constants
         ///////////////////////////////////////////////////////////////////////////
-        private val TAG = ChipLayoutManager::class.java.simpleName
+        private val TAG = ChipsLayoutManager::class.java.simpleName
         private const val INT_ROW_SIZE_APPROXIMATELY_FOR_CACHE = 10
         private const val APPROXIMATE_ADDITIONAL_ROWS_COUNT = 5
 
@@ -102,7 +103,7 @@ class ChipLayoutManager(context: Context)
 
         fun newBuilder(context: Context?): Builder {
             requireNotNull(context) { "you have passed null context to builder" }
-            return ChipLayoutManager(context).StrategyBuilder()
+            return ChipsLayoutManager(context).StrategyBuilder()
         }
     }
 
@@ -157,7 +158,7 @@ class ChipLayoutManager(context: Context)
         @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP) get
 
     /**
-     * when scrolling reached this position [ChipLayoutManager] is able to restore items layout according to cached items with positions above.
+     * when scrolling reached this position [ChipsLayoutManager] is able to restore items layout according to cached items with positions above.
      * That layout would exactly correspond to current item view situation
      */
     private var cacheNormalizationPosition: Int? = null
@@ -220,7 +221,7 @@ class ChipLayoutManager(context: Context)
     /** factory for placers factories */
     private val placerFactory = PlacerFactory(this)
 
-    /** used for testing purposes to spy for [ChipLayoutManager] behaviour  */
+    /** used for testing purposes to spy for [ChipsLayoutManager] behaviour  */
     var spy: ISpy = EmptySpy()
         @VisibleForTesting
         @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP) set
@@ -330,7 +331,7 @@ class ChipLayoutManager(context: Context)
          * @see StrategyBuilder.withLastRow
          */
         fun setRowStrategy(@RowStrategy rowStrategy: Int): StrategyBuilder {
-            this@ChipLayoutManager.rowStrategy = rowStrategy
+            this@ChipsLayoutManager.rowStrategy = rowStrategy
             return this as StrategyBuilder
         }
 
@@ -339,7 +340,7 @@ class ChipLayoutManager(context: Context)
          */
         fun setMaxViewsInRow(@IntRange(from = 1) maxViewsInRow: Int): Builder {
             require(maxViewsInRow >= 1) { "maxViewsInRow should be positive, but is = $maxViewsInRow" }
-            this@ChipLayoutManager.maxViewsInRow = maxViewsInRow
+            this@ChipsLayoutManager.maxViewsInRow = maxViewsInRow
             return this
         }
 
@@ -347,7 +348,7 @@ class ChipLayoutManager(context: Context)
          */
         fun setRowBreaker(breaker: IRowBreaker): Builder {
             assertNotNull(breaker, "breaker couldn't be null")
-            this@ChipLayoutManager.rowBreaker = breaker
+            this@ChipsLayoutManager.rowBreaker = breaker
             return this
         }
 
@@ -358,14 +359,14 @@ class ChipLayoutManager(context: Context)
             if (orientation != HORIZONTAL && orientation != VERTICAL) {
                 return this
             }
-            this@ChipLayoutManager.layoutOrientation = orientation
+            this@ChipsLayoutManager.layoutOrientation = orientation
             return this
         }
 
         /**
          * create SpanLayoutManager
          */
-        fun build(): ChipLayoutManager {
+        fun build(): ChipsLayoutManager {
             // setGravityResolver always have priority
             if (childGravityResolver == null) {
                 childGravityResolver = if (gravity != null) {
@@ -375,8 +376,8 @@ class ChipLayoutManager(context: Context)
                 }
             }
             stateFactory = if (layoutOrientation == HORIZONTAL) //TODO: Verify that this step is not problematic.
-                RowsStateFactory(this@ChipLayoutManager) else ColumnsStateFactory(
-                    this@ChipLayoutManager
+                RowsStateFactory(this@ChipsLayoutManager) else ColumnsStateFactory(
+                    this@ChipsLayoutManager
                 )
 
             stateFactory!!.apply {
@@ -387,7 +388,7 @@ class ChipLayoutManager(context: Context)
                 disappearingViewsManager = DisappearingViewsManager(canvas!!, childViews, this)
 
             }
-            return this@ChipLayoutManager
+            return this@ChipsLayoutManager
         }
     }
 
@@ -1022,12 +1023,12 @@ class ChipLayoutManager(context: Context)
      * based on the number of visible pixels in the visible items. This however assumes that all
      * list items have similar or equal widths or heights (depending on list orientation).
      *
-     * Also this is [ChipLayoutManager] specific issue, that we can't predict exact count of items on screen
+     * Also this is [ChipsLayoutManager] specific issue, that we can't predict exact count of items on screen
      * in general case, because we can't predict items count in row.
      * So to enable it you should accomplish one of those conditions:
      *
      *  *  Your items have same width and height
-     *  *  You have [ChipLayoutManager.setMaxViewsInRow] set and you able to make sure, that there won't be many rows with lower items count.
+     *  *  You have [ChipsLayoutManager.setMaxViewsInRow] set and you able to make sure, that there won't be many rows with lower items count.
      * The best is none.
      *
      *

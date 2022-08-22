@@ -1,6 +1,6 @@
 package com.blueiobase.api.android.chiplayoutmanager.layouter
 
-import com.blueiobase.api.android.chiplayoutmanager.main.ChipLayoutManager
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.cache.contract.IViewCacheStorage
 import com.blueiobase.api.android.chiplayoutmanager.gravity.contract.IGravityModifiersFactory
@@ -15,7 +15,7 @@ import com.blueiobase.api.android.chiplayoutmanager.placer.contract.IPlacerFacto
 
 
 class LayouterFactory constructor(
-    private val layoutManager: ChipLayoutManager,
+    private val layoutManager: ChipsLayoutManager,
     private val layouterCreator: ILayouterCreator,
     private val breakerFactory: IBreakerFactory,
     private val criteriaFactory: ICriteriaFactory,

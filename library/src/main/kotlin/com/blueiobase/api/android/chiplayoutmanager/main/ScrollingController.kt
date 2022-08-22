@@ -9,7 +9,7 @@ import kotlin.math.roundToInt
 
 
 abstract class ScrollingController(
-    private val layoutManager: ChipLayoutManager,
+    private val layoutManager: ChipsLayoutManager,
     private val stateFactory: IStateFactory,
     private val scrollerListener: IScrollerListener
 ): IScrollingController {
@@ -142,8 +142,8 @@ abstract class ScrollingController(
 
     private fun getLaidOutArea() = stateFactory.getEndViewBound() - stateFactory.getStartViewBound()
 
-    /** @see ChipLayoutManager.computeVerticalScrollOffset
-     * @see ChipLayoutManager.computeHorizontalScrollOffset
+    /** @see ChipsLayoutManager.computeVerticalScrollOffset
+     * @see ChipsLayoutManager.computeHorizontalScrollOffset
      */
     private fun computeScrollOffset(state: RecyclerView.State): Int {
         layoutManager.apply {
@@ -161,8 +161,8 @@ abstract class ScrollingController(
 
     }
 
-    /** @see ChipLayoutManager.computeVerticalScrollExtent
-     * @see ChipLayoutManager.computeHorizontalScrollExtent
+    /** @see ChipsLayoutManager.computeVerticalScrollExtent
+     * @see ChipsLayoutManager.computeHorizontalScrollExtent
      */
     private fun computeScrollExtent(state: RecyclerView.State): Int {
         if (layoutManager.childCount == 0 || state.itemCount == 0) {

@@ -12,7 +12,7 @@ import com.blueiobase.api.android.chiplayoutmanager.main.contract.IScrollingCont
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.IStateFactory
 
 
-class HorizontalScrollingController(private val layoutManager: ChipLayoutManager, stateFactory: IStateFactory, scrollerListener: IScrollerListener):
+class HorizontalScrollingController(private val layoutManager: ChipsLayoutManager, stateFactory: IStateFactory, scrollerListener: IScrollerListener):
     ScrollingController(layoutManager, stateFactory, scrollerListener), IScrollingController {
 
     override fun createSmoothScroller(context: Context, position: Int, timeMs: Int, anchor: AnchorViewState): SmoothScroller {

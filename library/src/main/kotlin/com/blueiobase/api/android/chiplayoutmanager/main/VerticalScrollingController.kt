@@ -11,7 +11,7 @@ import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.main.contract.IScrollingController
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.IStateFactory
 
-open class VerticalScrollingController(private val layoutManager: ChipLayoutManager, stateFactory: IStateFactory, scrollerListener: IScrollerListener):
+open class VerticalScrollingController(private val layoutManager: ChipsLayoutManager, stateFactory: IStateFactory, scrollerListener: IScrollerListener):
     ScrollingController(layoutManager, stateFactory, scrollerListener), IScrollingController {
 
     override fun createSmoothScroller(context: Context, position: Int, timeMs: Int, anchor: AnchorViewState): SmoothScroller {
