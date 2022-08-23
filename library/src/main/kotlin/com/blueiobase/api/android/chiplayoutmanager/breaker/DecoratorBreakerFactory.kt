@@ -14,7 +14,7 @@ class DecoratorBreakerFactory(
 ) : IBreakerFactory {
 
     override fun createBackwardRowBreaker(): ILayoutRowBreaker {
-        var breaker: ILayoutRowBreaker = breakerFactory.createBackwardRowBreaker()
+        var breaker = breakerFactory.createBackwardRowBreaker()
         breaker = BackwardBreakerContract(rowBreaker, CacheRowBreaker(cacheStorage, breaker))
         maxViewsInRow?.let{
             breaker = MaxViewsBreaker(it, breaker)

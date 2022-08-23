@@ -101,7 +101,6 @@ class ViewCacheStorage(private val layoutManager: RecyclerView.LayoutManager) : 
 
     override fun onSaveInstanceState() = CacheParcelableContainer(startsRow, endsRow)
 
-
     override fun onRestoreInstanceState(parcelable: Parcelable?) {
         if (parcelable == null) return
         check(parcelable is CacheParcelableContainer) { "wrong parcelable passed" }

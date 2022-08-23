@@ -2,6 +2,7 @@ package com.blueiobase.api.android.chiplayoutmanager.anchor
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 import com.blueiobase.api.android.chiplayoutmanager.anchor.contract.IAnchorFactory
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 import com.blueiobase.api.android.chiplayoutmanager.layouter.contract.ICanvas

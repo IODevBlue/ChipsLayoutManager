@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.blueiobase.api.android.chiplayoutmanager.anchor.model.AnchorViewState
 
 /**
- * Interface contract for the management and creation of [AnchorViewState] for anchored [View] objects.
+ * Interface for the management and creation of [AnchorViewState] for anchored [View] objects.
  *
  * This interface sets the base requirements for implementers that should manage the anchoring of [View] objects
  * at the extreme ends of the screen.

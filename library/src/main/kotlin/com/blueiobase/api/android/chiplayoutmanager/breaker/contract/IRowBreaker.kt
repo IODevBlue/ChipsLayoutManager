@@ -4,7 +4,11 @@ import android.view.View
 import androidx.annotation.IntRange
 
 /**
- * Interface for Layout Managers to decide if a row should be broken from a specified [View] position.
+ * Interface to decide if a row should be broken from a specified [View] position.
+ *
+ * @author IO DevBlue
+ * @since 1.0.0
+ *
  */
 interface IRowBreaker {
 

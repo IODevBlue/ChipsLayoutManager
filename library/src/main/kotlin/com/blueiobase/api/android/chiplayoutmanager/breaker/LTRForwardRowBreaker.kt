@@ -5,8 +5,8 @@ import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.ILayoutRowB
 
 class LTRForwardRowBreaker: ILayoutRowBreaker {
 
-    override fun isRowBroke(al: AbstractLayouter): Boolean {
-        return (al.viewLeft > al.getCanvasLeftBorder()
-                && al.viewLeft + al.currentViewWidth > al.getCanvasRightBorder())
+    override fun isRowBroke(abstractLayouter: AbstractLayouter): Boolean {
+        return (abstractLayouter.viewLeft > abstractLayouter.getCanvasLeftBorder()
+                && abstractLayouter.viewLeft + abstractLayouter.currentViewWidth > abstractLayouter.getCanvasRightBorder())
     }
 }
