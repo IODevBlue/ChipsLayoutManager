@@ -18,9 +18,7 @@ import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
  */
 class ColumnsAnchorFactory(private val layoutManager: RecyclerView.LayoutManager, canvas: ICanvas): AbstractAnchorFactory(layoutManager, canvas) {
 
-    /**
-     * The [View] objects that the current [layout manager][RecyclerView.LayoutManager] is responsible for.
-     */
+    /** The [View] objects that the current [layout manager][RecyclerView.LayoutManager] is responsible for. */
     private val childViews = ChildViewsIterable(layoutManager)
 
     override fun getAnchor(): AnchorViewState {

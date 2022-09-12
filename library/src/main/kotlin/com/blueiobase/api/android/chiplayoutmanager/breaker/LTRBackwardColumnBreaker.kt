@@ -14,8 +14,8 @@ import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
  */
 class LTRBackwardColumnBreaker: ILayoutRowBreaker {
 
-    override fun isRowBroke(abstractLayouter: AbstractLayouter): Boolean {
-        return (abstractLayouter.getViewBottom() - abstractLayouter.currentViewHeight < abstractLayouter.getCanvasTopBorder()
-                && abstractLayouter.getViewBottom() < abstractLayouter.getCanvasBottomBorder())
-    }
+    override fun isRowBroke(abstractLayouter: AbstractLayouter) =
+        abstractLayouter.getViewBottom() - abstractLayouter.currentViewHeight < abstractLayouter.getCanvasTopBorder()
+                && abstractLayouter.getViewBottom() < abstractLayouter.getCanvasBottomBorder()
+
 }

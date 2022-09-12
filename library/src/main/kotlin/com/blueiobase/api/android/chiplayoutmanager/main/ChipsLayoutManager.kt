@@ -347,7 +347,6 @@ class ChipsLayoutManager(val context: Context)
         /** @param breaker override to determine whether ChipsLayoutManager should breaks row due to position of view.
          */
         fun setRowBreaker(breaker: IRowBreaker): Builder {
-            assertNotNull(breaker, "breaker couldn't be null")
             this@ChipsLayoutManager.rowBreaker = breaker
             return this
         }

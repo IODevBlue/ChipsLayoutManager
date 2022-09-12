@@ -25,9 +25,7 @@ data class AnchorViewState constructor(var position: Int?, var anchorViewRect: R
 
     companion object CREATOR : Parcelable.Creator<AnchorViewState> {
 
-        /**
-         * Returns a new instance of [AnchorViewState] with null parameters.
-         */
+        /** Returns a new instance of [AnchorViewState] with null parameters.*/
         fun getNotFoundState() =  AnchorViewState()
 
         override fun createFromParcel(parcel: Parcel) = AnchorViewState(parcel)
@@ -39,14 +37,14 @@ data class AnchorViewState constructor(var position: Int?, var anchorViewRect: R
     /**
      * Validates if there is any [View] anchored to the extreme left/start.
      *
-     * @return true if there is an anchored [View] to the extreme left/start of screen, false if otherwise.
+     * @return `true` if there is an anchored [View] to the extreme left/start of screen, `false` if otherwise.
      */
     fun isNotFoundState() =  anchorViewRect == null
 
     /**
      * Validates if the [View] at the extreme left/start is being removed or has been removed.
      *
-     * @return true if removed, false if otherwise.
+     * @return `true` if removed, `false` if otherwise.
      */
     fun isRemoving() = position == -1
 

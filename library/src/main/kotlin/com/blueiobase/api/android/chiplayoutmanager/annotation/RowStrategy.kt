@@ -12,7 +12,5 @@ import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
     ChipsLayoutManager.STRATEGY_CENTER_DENSE
 )
 @Retention(AnnotationRetention.SOURCE)
-/**
- * Denotes that the annotated [Int] is one of the constants representing a Row Strategy for a [ChipsLayoutManager].
- */
+/** Denotes that the annotated [Int] is one of the constants representing a Row Strategy for a [ChipsLayoutManager]. */
 annotation class RowStrategy

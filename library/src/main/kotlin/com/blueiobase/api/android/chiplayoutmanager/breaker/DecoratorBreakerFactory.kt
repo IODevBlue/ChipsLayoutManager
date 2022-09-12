@@ -1,16 +1,25 @@
 package com.blueiobase.api.android.chiplayoutmanager.breaker
 
-import com.blueiobase.api.android.chiplayoutmanager.cache.contract.IViewCacheStorage
+import android.view.View
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.IBreakerFactory
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.ILayoutRowBreaker
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.IRowBreaker
+import com.blueiobase.api.android.chiplayoutmanager.cache.contract.IViewCacheStorage
+import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 
-
+/**
+ * This class is mainly responsible for the handling and breaking/splicing of [View] objects at the
+ * extreme ends of the [ChipsLayoutManager] when the layout orientation is [horizontal][ChipsLayoutManager.HORIZONTAL]..
+ *
+ * @author IO DevBlue
+ * @since 1.0.0
+ *
+ */
 class DecoratorBreakerFactory(
     private val cacheStorage: IViewCacheStorage,
     private val rowBreaker: IRowBreaker,
-    /** Max items in row restriction. Layout of row should be stopped when this count of views reached */
-    private val maxViewsInRow: Int?, private val breakerFactory: IBreakerFactory
+    private val maxViewsInRow: Int?,
+    private val breakerFactory: IBreakerFactory
 ) : IBreakerFactory {
 
     override fun createBackwardRowBreaker(): ILayoutRowBreaker {

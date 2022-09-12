@@ -6,7 +6,7 @@ import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.ILayoutRowB
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.IRowBreaker
 
 /**
- * A [RowBreakerDecorator] which breaks/splices [View] objects at the extreme left/start of a layout.
+ * A [RowBreakerDecorator] which breaks/splices [View] objects at the extreme left/start for the [DecoratorBreakerFactory].
  *
  * @author IO DevBlue
  * @since 1.0.0
