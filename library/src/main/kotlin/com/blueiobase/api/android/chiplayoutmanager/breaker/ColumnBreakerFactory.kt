@@ -5,7 +5,7 @@ import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.IBreakerFac
 import com.blueiobase.api.android.chiplayoutmanager.main.ChipsLayoutManager
 
 /**
- * This class is responsible for breaking the [View] object anchored at the extreme ends of the
+ * This class is mainly responsible for the handling and breaking/splicing of [View] objects anchored at the extreme ends of the
  * [ChipsLayoutManager] when the layout orientation is [vertical][ChipsLayoutManager.VERTICAL].
  *
  * @author IO DevBlue
