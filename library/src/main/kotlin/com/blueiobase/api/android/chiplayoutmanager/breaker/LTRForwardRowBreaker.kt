@@ -5,7 +5,7 @@ import com.blueiobase.api.android.chiplayoutmanager.layouter.AbstractLayouter
 import com.blueiobase.api.android.chiplayoutmanager.breaker.contract.ILayoutRowBreaker
 
 /**
- * This class is responsible for breaking the [View] object anchored at the left/start for the [DecoratorBreakerFactory].
+ * This class is responsible for breaking the [View] object anchored at the left/start for the [LTRRowBreakerFactory].
  *
  * @author IO DevBlue
  * @since 1.0.0
